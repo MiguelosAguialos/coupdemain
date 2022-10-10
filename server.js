@@ -23,4 +23,5 @@ server.get("/data", function(req,res){
     return res.json(user)
 })
 
+console.log('server run port 3000');
 server.listen(3000)

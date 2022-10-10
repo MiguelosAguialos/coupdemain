@@ -1,0 +1,3 @@
+.DS_Store
+// ignora node modules para não subir pro git pois não é recomendado fazer isso
+node_modules/
