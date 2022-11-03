@@ -50,6 +50,12 @@ io.on('connection', (socket) => {
         fs.writeFileSync('./user.json', JSON.stringify(user, null, 2), 'utf-8');
         console.log("Valor enviado para minimo: "+msg)
       });
+      socket.on('todos', (msg) => {
+        const valor = msg
+        user.todos = valor
+        fs.writeFileSync('./user.json', JSON.stringify(user, null, 2), 'utf-8');
+        console.log("Valor enviado para todos: "+msg)
+      });
 });
 
 app.get("/data", function(req,res){
