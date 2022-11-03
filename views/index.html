@@ -8,32 +8,73 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
+    <div class="header">
+
+      <!--Content before waves-->
+      <div class="inner-header flex">
+        <div>
+          <h1>Polegar</h1>
+          <div class="slidecontainer">
+            <input type="range" min="0" max="5" value="0" class="range" id="rangebar1"> 
+            <h1 id="value1">0</h1>
+          </div>
+          </div>
+          <div>
+          <h1>Indicador</h1>
+          <div class="slidecontainer">
+            <input type="range" min="0" max="5" value="0" class="range" id="rangebar2"> 
+            <h1 id="value2">0</h1>
+          </div>
+          </div>
+          <div>
+          <h1>Médio</h1>
+          <div class="slidecontainer">
+            <input type="range" min="0" max="5" value="0" class="range" id="rangebar3"> 
+            <h1 id="value3">0</h1>
+          </div>
+        </div>
+        <div>
+          <h1>Anelar</h1>
+          <div class="slidecontainer">
+            <input type="range" min="0" max="5" value="0" class="range" id="rangebar4"> 
+            <h1 id="value4">0</h1>
+          </div>
+        </div>
+        <div>
+          <h1>Mínimo</h1>
+          <div class="slidecontainer">
+            <input type="range" min="0" max="5" value="0" class="range" id="rangebar5"> 
+            <h1 id="value5">0</h1>
+          </div>
+        </div>
+        <div>
+          <h1>Todos</h1>
+          <div class="slidecontainer">
+            <input type="range" min="0" max="5" value="0" class="range" id="rangebar6"> 
+            <h1 id="value6">0</h1>
+          </div>
+        </div>
+      </div>
+      <!--Waves Container-->
+      <div>
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+      viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+      <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+      </defs>
+      <g class="parallax">
+      <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+      <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+      <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+      <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+      </g>
+      </svg>
+      </div>
+      <!--Waves end-->
+      
+      </div>
     <div class="container">
-      <h1>Polegar</h1>
-      <div class="slidecontainer">
-        <input type="range" min="0" max="5" value="0" class="range" id="rangebar1"> 
-        <h1 id="value1">0</h1>
-      </div>
-      <h1>Indicador</h1>
-      <div class="slidecontainer">
-        <input type="range" min="0" max="5" value="0" class="range" id="rangebar2"> 
-        <h1 id="value2">0</h1>
-      </div>
-      <h1>Médio</h1>
-      <div class="slidecontainer">
-        <input type="range" min="0" max="5" value="0" class="range" id="rangebar3"> 
-        <h1 id="value3">0</h1>
-      </div>
-      <h1>Anelar</h1>
-      <div class="slidecontainer">
-        <input type="range" min="0" max="5" value="0" class="range" id="rangebar4"> 
-        <h1 id="value4">0</h1>
-      </div>
-      <h1>Mínimo</h1>
-      <div class="slidecontainer">
-        <input type="range" min="0" max="5" value="0" class="range" id="rangebar5"> 
-        <h1 id="value5">0</h1>
-      </div> 
+       
     </div>
     <script src="/socket.io/socket.io.js"></script>
     <script>
@@ -44,6 +85,7 @@
         var input3 = document.getElementById('rangebar3');
         var input4 = document.getElementById('rangebar4');
         var input5 = document.getElementById('rangebar5');
+        var input6 = document.getElementById('rangebar6');
 
         const slider1 = document.querySelector("#rangebar1")
         const value1 = document.querySelector("#value1")
@@ -92,6 +134,15 @@
             value5.textContent = this.value
             if (slider5.value) {
             socket.emit('minimo', input5.value);
+        }
+        }
+        const slider6 = document.querySelector("#rangebar6")
+        const value6 = document.querySelector("#value6")
+        value6.textContent = slider1.value
+        slider6.oninput = function(){
+            value6.textContent = this.value
+            if (slider6.value) {
+            socket.emit('todos', input6.value);
         }
         }
     </script>
