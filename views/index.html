@@ -4,78 +4,82 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="/robotic-arm.png" />
     <title>Coup de Main</title>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <div class="header">
+    <div>
+      <header class="header">
+        <strong>Coup de Main</strong>
+        <img src="/robotic-arm.png" alt="Feed Logo" />
+      </header>
+      <div class="wrapper">
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+          <img class="cover" src="/cover.jpg" />
+          <div class="profile">
+              <img src="https://github.com/MiguelosAguialos.png" />
+              <strong>Miguel Aguiar</strong>
+              <span>Web Developer</span>
+          </div>
 
-      <!--Content before waves-->
-      <div class="inner-header flex">
-        <div>
-          <h1>Polegar</h1>
-          <div class="slidecontainer">
-            <input type="range" min="0" max="5" value="0" class="range" id="rangebar1"> 
-            <h1 id="value1">0</h1>
-          </div>
-          </div>
-          <div>
-          <h1>Indicador</h1>
-          <div class="slidecontainer">
-            <input type="range" min="0" max="5" value="0" class="range" id="rangebar2"> 
-            <h1 id="value2">0</h1>
-          </div>
-          </div>
-          <div>
-          <h1>Médio</h1>
-          <div class="slidecontainer">
-            <input type="range" min="0" max="5" value="0" class="range" id="rangebar3"> 
-            <h1 id="value3">0</h1>
-          </div>
-        </div>
-        <div>
-          <h1>Anelar</h1>
-          <div class="slidecontainer">
-            <input type="range" min="0" max="5" value="0" class="range" id="rangebar4"> 
-            <h1 id="value4">0</h1>
-          </div>
-        </div>
-        <div>
-          <h1>Mínimo</h1>
-          <div class="slidecontainer">
-            <input type="range" min="0" max="5" value="0" class="range" id="rangebar5"> 
-            <h1 id="value5">0</h1>
-          </div>
-        </div>
-        <div>
-          <h1>Todos</h1>
-          <div class="slidecontainer">
-            <input type="range" min="0" max="5" value="0" class="range" id="rangebar6"> 
-            <h1 id="value6">0</h1>
-          </div>
-        </div>
+          <footer>
+              <a target="_blanck" href="https://github.com/MiguelosAguialos">
+                  Git Hub
+              </a>
+          </footer>
       </div>
-      <!--Waves Container-->
+      <!-- SIDEBAR -->
+      <!-- RANGEBAR -->
       <div>
-      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-      viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-      <defs>
-      <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-      </defs>
-      <g class="parallax">
-      <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
-      <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
-      <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
-      <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
-      </g>
-      </svg>
+        <div class="post">
+          <h1>Polegar</h1>
+          <div class="info">
+            <input type="range" min="0" max="5" value="0" class="range" id="rangebar1"> 
+            <p id="value1">0</p>
+          </div>
+          </div>
+          <div class="post">
+          <h1>Indicador</h1>
+          <div class="info">
+            <input type="range" min="0" max="5" value="0" class="range" id="rangebar2"> 
+            <p id="value2">0</p>
+          </div>
+          </div>
+          <div class="post">
+          <h1>Médio</h1>
+          <div class="info">
+            <input type="range" min="0" max="5" value="0" class="range" id="rangebar3"> 
+            <p id="value3">0</p>
+          </div>
+        </div>
+        <div class="post">
+          <h1>Anelar</h1>
+          <div class="info">
+            <input type="range" min="0" max="5" value="0" class="range" id="rangebar4"> 
+            <p id="value4">0</p>
+          </div>
+        </div>
+        <div class="post">
+          <h1>Mínimo</h1>
+          <div class="info">
+            <input type="range" min="0" max="5" value="0" class="range" id="rangebar5"> 
+            <p id="value5">0</p>
+          </div>
+        </div>
+        <div class="post">
+          <h1>Todos</h1>
+          <div class="info">
+            <input type="range" min="0" max="5" value="0" class="range" id="rangebar6"> 
+            <p id="value6">0</p>
+          </div>
+        </div>
       </div>
-      <!--Waves end-->
-      
-      </div>
-    <div class="container">
-       
     </div>
+  </div>
+    
+
     <script src="/socket.io/socket.io.js"></script>
     <script>
 
